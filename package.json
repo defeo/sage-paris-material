@@ -1,0 +1,20 @@
+{
+  "name": "sagemath-paris",
+  "version": "0.1.0",
+  "description": "Lecture material for SageMath Paris meetings",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/defeo/sage-paris-material.git"
+  },
+  "author": "SageMath community",
+  "license": "CC BY 4.0",
+  "bugs": {
+    "url": "https://github.com/defeo/sage-paris-material/issues"
+  },
+  "dependencies": {
+    "gulp-front-matter": "^1.2.3",
+    "gulp-sass": "^2.0.4",
+    "swig": "^1.4.2",
+    "through2": "^2.0.0"
+  }
+}

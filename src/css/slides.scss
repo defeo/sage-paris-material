@@ -1,0 +1,49 @@
+@import "http://fonts.googleapis.com/css?family=Marcellus&subset=latin";
+/*@import "http://fonts.googleapis.com/css?family=Oxygen+Mono";*/
+
+$theme: rgb(46,131,200);
+
+.remark-container {
+    background-color: $theme + rgb(30,30,30);
+}
+
+a {
+    color: $theme;
+    text-decoration: none;
+    &:hover { text-decoration: underline; }
+    &:visited { color: $theme - rgb(40,40,40); }
+}
+
+.remark-slide-content {
+    font-family: 'Marcellus', serif;
+    font-size: 20pt;
+    line-height: 1.3;
+    
+    h1 {
+	font-size: 160%;
+	margin-top: 0.2ex;
+	margin-left: 1ex;
+	color: $theme;
+    }
+    h2 {
+	font-size: 140%;
+	color: $theme - rgb(30,30,30);
+    }
+    h3 {
+	font-size: 120%;
+	color: $theme - rgb(50,50,50);
+    }
+    em { color: $theme; }
+}
+
+.license {
+    font-size: 70%;
+    position: absolute;
+    bottom: 6ex;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.red { color: red }
+.green { color: lime }
+.orange { color: orange }
