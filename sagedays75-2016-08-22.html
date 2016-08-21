@@ -1,0 +1,383 @@
+---
+layout: remark-slides
+title: The SageMath system
+---
+class: middle, center
+
+# The SageMath system
+
+[Sage Days 75](http://wiki.sagemath.org/days75)
+
+8/22/2016
+
+[![SageMath](http://www.sagemath.org/pix/sage-banner-02.png)](http://www.sagemath.org/)
+
+.license[
+![Creative Commons Licence](http://i.creativecommons.org/p/zero/1.0/88x31.png)
+[Public Domain](http://creativecommons.org/publicdomain/zero/1.0/)
+]
+
+---
+class:middle, center
+
+# SageMath ?
+
+---
+
+# The SageMath mission
+
+> "Creating a viable free open source alternative to Magma, Maple, Mathematica and Matlab.
+>
+> [...]
+>
+> and a welcoming community of users and developers"
+
+---
+
+# SageMath's founding principles
+
+- Developed by teachers, researchers and professionals, for teachers,
+  researchers and students.
+
+- Free (as in freedom, GPL)
+
+- "We are building the car, not reinventing the wheel"
+
+  - ATLAS, GAP, Linbox, Maxima, MPFR, MPIR, PARI/GP,
+	NetworkX, NTL, Numpy/Scipy, Singular, Symmetrica, ...
+  - Standard programming language (Python)
+  - Standard notebook system ([IPython](http://tmpnb.org))
+
+- "Bazar" development model
+  
+- Active proselytism
+
+---
+class:middle, center
+
+# [Demo](https://cloud.sagemath.com/projects/a8436f67-cdc5-4f3f-bf97-363d6be83c3d/files/)
+
+---
+
+# Sage is a free software distribution
+
+## Software included with SageMath:
+
+<iframe src="http://www.sagemath.org/links-components.html#sage-nav"
+	style="overflow-y:scroll;height:400px;width:100%">
+</iframe>
+
+---
+
+# Sage is a free software distribution
+
+~~~
+> sage -gap
+ ┌───────┐   GAP 4.8.3, 19-Mar-2016, build of 2016-04-06 16:18:27 (CEST)
+ │  GAP  │   http://www.gap-system.org
+ └───────┘   Architecture: x86_64-unknown-linux-gnu-gcc-default64
+ Libs used:  gmp, readline
+ Loading the library and packages ...
+ Packages:   GAPDoc 1.5.1
+ Try '?help' for help. See also  '?copyright' and  '?authors'
+gap> 
+~~~
+
+---
+
+# Sage is a free software distribution
+
+~~~
+> sage -singular
+                     SINGULAR                                 /  Development
+ A Computer Algebra System for Polynomial Computations       /   version 3-1-7
+                                                           0<
+ by: W. Decker, G.-M. Greuel, G. Pfister, H. Schoenemann     \   Aug 2013
+FB Mathematik der Universitaet, D-67653 Kaiserslautern        \
+> 
+~~~
+
+---
+
+# Sage is a free software distribution
+
+~~~
+> sage -maxima
+;;; Loading #P"/home/defeo/sage/local/lib/ecl/sb-bsd-sockets.fas"
+;;; Loading #P"/home/defeo/sage/local/lib/ecl/sockets.fas"
+;;; Loading #P"/home/defeo/sage/local/lib/ecl/defsystem.fas"
+;;; Loading #P"/home/defeo/sage/local/lib/ecl/cmp.fas"
+Maxima 5.35.1 http://maxima.sourceforge.net
+using Lisp ECL 16.1.2
+Distributed under the GNU Public License. See the file COPYING.
+Dedicated to the memory of William Schelter.
+The function bug_report() provides bug reporting information.
+(%i1) 
+~~~
+
+---
+
+# Sage is a free software distribution
+
+~~~
+> sage -gp
+           GP/PARI CALCULATOR Version 2.8.0 (development git-b70b447)
+          amd64 running linux (x86-64/GMP-5.1.3 kernel) 64-bit version
+                 compiled: Aug  5 2016, gcc version 4.9.3 (GCC)
+                            threading engine: single
+                 (readline v6.3 enabled, extended help enabled)
+
+                     Copyright (C) 2000-2016 The PARI Group
+
+PARI/GP is free software, covered by the GNU General Public License, and comes 
+WITHOUT ANY WARRANTY WHATSOEVER.
+
+Type ? for help, \q to quit.
+Type ?15 for how to get moral (and possibly technical) support.
+
+parisize = 8000000, primelimit = 500000
+~~~
+
+---
+
+# Sage is a free software distribution
+
+~~~
+> sage -R
+R version 3.2.4 Revised (2016-03-16 r70336) -- "Very Secure Dishes"
+Copyright (C) 2016 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> 
+~~~
+
+---
+
+# SageMath is a Python library
+
+SageMath also contains original code, implementing unique
+functionalities.
+
+- 2 Mlocs¹
+- 51K commits²
+- 3.6K classes³
+- 68K functions⁴
+- rich mathematical content: categories, combinatorics,
+  graphs, number theory, ...
+  - many *exclusive* algorithms
+
+<small>
+¹ Source: `wc -l $(find src/sage)`.  
+² Source: [GitHub](https://github.com/sagemath/sage).  
+³ Source: `grep -r ^class src/sage | wc -l`.  
+⁴ Source: `egrep -r '^\s*c?p?def' src/sage | wc -l`.
+</small>
+
+---
+
+# SageMath has many different UIs
+
+- Command line, via IPython
+- Browser-based WebUI (Sage Notebook, *to disappear?*)
+- Browser-based WebUI ([Jupyter](https://jupyter.org/))
+- Cloud service: http://cloud.sagemath.org
+- HTML5 widget ([Sage cells](https://sagecell.sagemath.org/))
+- [emacs mode](http://wiki.sagemath.org/sage-mode)
+
+---
+
+# [SageMath is portable](http://www.sagemath.org/download.html)
+
+Native versions for:
+
+- Most Linux distros
+- Solaris (32 et 64 bits)
+- FreeBSD
+- Most Mac OSX
+
+Also available on Windows
+
+- via a WebUI
+- in a virtual machine
+- in Cygwin or MinGW
+- on a bootable [usb key](http://sagedebianlive.metelu.net/)
+- via a [Docker image](https://github.com/sagemath/docker-images) (experimental, see also <https://github.com/embray/sage-windows>)
+
+---
+
+# SageMath mini-history
+
+- 1999-2005: "William Stein writes over 25,000 lines of Magma code for
+  his research, and realizes that Magma was a bad long term investment
+  since he couldn't see or modify the internals."
+- Feb. 2005: Sage 0.1, a Python library linking
+  PARI, Maxima, Python, Singular, GAP.
+- Fev. 2006: Sage 1.0
+  Sage Days 1, San Diego, 10 participants?
+- Fev. 2010: Sage 4.4.2
+  Sage Days 20, Luminy (France), 120 participants
+- Current version: SageMath 7.3
+
+---
+class:middle, center
+
+# Free as in *freedom*
+
+---
+
+# Free as in *freedom*
+
+> “You can read Sylow’s Theorem and its proof in Huppert's book in the
+> library... then you can use Sylow’s Theorem for the rest of your
+> life free of charge, but for many computer algebra systems license
+> fees have to be paid regularly...  With this situation two of
+> the most basic rules of conduct in mathematics are violated: In
+> mathematics information is passed on free of charge and everything
+> is laid open for checking.”
+>
+> — J. Neubüser (1993) (started GAP in 1986)
+
+---
+
+# Freedom to run
+
+On any machine, for any (legal) use.
+
+## Freedom to give away copies
+
+(Also to sell them!)
+
+Why?
+
+- (kind of) easy to install and maintain at your university
+- Students can use at home
+- Run computations remotely, scale freely
+- Share programs, notebooks
+- Free for anyone, even with limited resources
+- No costs for developing countries
+
+
+---
+
+# Freedom to study the code
+
+Open source: you can read what it does
+
+Why?
+
+- Pedagogy
+- Dissemination
+- Expressive, readable, (kind of) well documented code
+- Reproducibility of scientific results
+- Verify (simple) proofs
+- Master hypotheses, models, algorithms
+- Analyze bugs and weird behaviors 
+
+---
+
+# Freedom to contribute
+
+Why?
+
+- Fix bugs
+- Write documentation
+- Write localizations
+- Domain specific development
+- Share code
+- Engage with a community
+
+---
+
+# Some free books
+
+### Calcul Mathématique avec Sage (in French)
+
+<http://sagebook.gforge.inria.fr/>
+
+### The SageMath tutorial
+
+<http://www.sagemath.org/doc> David Joyner, William Stein et al.
+
+### A First Course in Linear Algebra
+
+<http://linear.ups.edu> Robert Beezer
+
+### More...
+
+<http://www.sagemath.org/library-publications.html#books>
+
+---
+class:middle, center
+
+# Development model
+
+---
+
+# `SageMath == Python`
+
+Python is an interpreted multi-paradigm programming language
+
+Easy to use, like a pocket calculator
+
+~~~
+python: x = 17
+python: x
+17
+python: 3*x
+51
+~~~
+
+Easy to read and write:
+
+math: {17x | x ∈ {0, 1,... , 9} and x is odd }
+
+python: `{ 17*x for x in range(10) if x%2 == 1 }`
+
+---
+
+# Python is extremely popular
+
+- Among the 5 most used programming languages
+
+> “Google has made no secret of the fact they use Python a lot for a
+>number of internal projects. Even knowing that, once I was an
+>employee, I was amazed at how much Python code there actually is in
+>the Google source code system.”
+>
+> — Guido van Rossum (créateur de Python)
+
+- Many libraries available in Python: data bases,
+  graphics, network, parallel computing...
+- Easy to interface with C/C++/Fortran
+- Cython: Python ↔ C
+- Python has become a *de facto* standard in scientific computing.
+
+---
+
+# Development cycle
+
+### Bug tracking
+
+<http://trac.sagemath.org/>
+
+### Tickets et patches
+
+Example : [Beginner tickets](https://trac.sagemath.org/query?status=needs_info&status=needs_review&status=needs_work&status=new&order=priority&col=id&col=summary&col=status&col=type&col=priority&col=milestone&col=component&keywords=%7Ebeginner&report=38)
+
+### Release cycle
+
+A new version approximately every three months.
